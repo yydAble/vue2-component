@@ -44,7 +44,7 @@ export default {
       })
     },
     validate(callback){
-      return new Promise((resolve,reject)=>{
+      return new Promise((resolve,reject)=>{ // eslint-disable-line
         let valid = true
         let count = 0
         this.fields.forEach(field=>{
@@ -57,8 +57,6 @@ export default {
               if(typeof callback === 'function'){
                 callback(valid)
               }
-            }else{
-              reject(valid)
             }
           })
         })
