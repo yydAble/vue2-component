@@ -1,17 +1,28 @@
 <template>
   <div>
-    <Ylert v-if="show">这是一条提示信息</Ylert>
-    <button @click="show = true">显示</button>
+     <button @click="handleOpen1">打开提示 1</button>
+    <button @click="handleOpen2">打开提示 2</button>
   </div>
 </template>
 <script>
-  import Ylert from './../components/alert/alert.vue';
 
   export default {
-    components: { Ylert },
     data () {
       return {
         show: false
+      }
+    },
+    methods: {
+      handleOpen1 () {
+        this.$Alert.info({
+          content: '我是提示信息 1'
+        });
+      },
+      handleOpen2 () {
+        this.$Alert.info({
+          content: '我是提示信息 2',
+          duration: 3
+        });
       }
     }
   }
